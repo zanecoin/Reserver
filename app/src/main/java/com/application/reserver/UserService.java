@@ -16,21 +16,23 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class UserService {
     private static final UserService instance = new UserService();
     private static final String TAG = "UserService";
-    /* create service instance */
+    /*create service instance*/
     public static UserService getInstance() {
         return instance;
     }
-    /* constructor */
-    public UserService(){}
-    /* create user instance */
+    /*constructor*/
+    public UserService(){
+
+    }
+    /*create user instance*/
     private User user;
-    /* get user info */
+    /*get user info*/
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
-        /* saving user info to fire store database collection */
+        /*saving user info to fire store database*/
         this.user = user;
         if (user != null){
             FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -38,19 +40,19 @@ public class UserService {
             usersCollection.document(user.getUid()).set(user.toMap()).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    Log.i(TAG, "onComplete: success");
-                }
-                else{
-                    task.getException().printStackTrace();
-                }
+                    if (task.isSuccessful()){
+                        Log.i(TAG, "onComplete: success");
+                    }
+                    else{
+                        task.getException().printStackTrace();
+                    }
                 }
             });
         }
     }
 
     public void fetchUser(final FirebaseUser user){
-        /* getting user info from fire base database */
+        /*getting user info from fire base database*/
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         CollectionReference usersCollection = database.collection("users");
         usersCollection.document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
