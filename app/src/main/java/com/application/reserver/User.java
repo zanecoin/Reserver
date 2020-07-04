@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class User {
-    /*local variables*/
+    /* local variables */
     private String uid;
     private String email;
     private String password;
     private String name;
     private String phone;
-    /*public user method*/
+    /* public user method */
     public User(String uid, String email, String password, String name, String phone) {
         this.uid = uid;
         this.email = email;
@@ -18,14 +18,12 @@ public class User {
         this.name = name;
         this.phone = phone;
     }
-    /*user info methods*/
+    /* user info methods */
     public String getUid() {
         return uid;
     }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getEmail() { return email; }
 
     public String getPassword() {
         return password;
@@ -39,6 +37,7 @@ public class User {
         return phone;
     }
 
+    /* method to create map of user data */
     public Map<String, Object> toMap() {
         Map<String, Object> map = new HashMap<>();
 
@@ -49,6 +48,7 @@ public class User {
         return map;
     }
 
+    /* method to get user data from the map */
     public static User fromMap(String uid, String password, Map<String, Object> map) {
         String email = null;
         String name = null;

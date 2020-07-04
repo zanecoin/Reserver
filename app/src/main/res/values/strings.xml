@@ -1,24 +1,27 @@
 <resources>
     <string name="app_name">Reserver</string>
     <string name="sampleText">SampleText</string>
-
+    //login
     <string name="appName">RESERVING APP</string>
     <string name="email">E-mail</string>
     <string name="password">Heslo</string>
-
+    //registration
     <string name="desc">Tvorba nového účtu</string>
     <string name="name">Jméno</string>
     <string name="phone">Telefon</string>
     <string name="register">Registrovat se</string>
     <string name="backLogin">Máte již vytvořený účet? Klidněte zde pro přihlášení!</string>
     <string name="astrix">*Jméno a telefon lze později upravit. Přihlášení probíhá pomocí e-mailu a hesla.</string>
-
     <string name="login">Přihlásit se</string>
     <string name="desc2">Přihlášení</string>
     <string name="backRegister">Ještě nemáte účet? Klidněte zde pro registraci!</string>
-
+    //main
     <string name="logout">Odhlásit se</string>
     <string name="dataTitle">UŽIVATELSKÁ DATA:</string>
+    //bottom navigation bar
+    <string name="search">Vyhledat</string>
+    <string name="profile">Profil</string>
+    <string name="calendar">Kalendář</string>
 
     <string name="searchTitle">Vyhledávání</string>
     <string name="searchField">Vyhledávat</string>
